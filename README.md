@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# ruby-getting-started
+>>>>>>> 5c25ed909604a7c3848e5ec7aa3733f3f69b4432
 
 
 StartNow
