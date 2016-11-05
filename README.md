@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#heidi is makinga change
-#ruby-getting-started
-=======
-# STARTNOW dfkjdslkfjdslkfjdlsk
->>>>>>> 8863aec4fa25d4b61a64b78a5f93616ece0613b0
+# ruby-getting-started
 
 A barebones Rails app, which can easily be deployed to Heroku.
 
