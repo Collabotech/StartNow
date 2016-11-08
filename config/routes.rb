@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   get 'sessions/new'
+
   get 'pages/index'
   get 'profile', to: 'pages#show'
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'
+  root 'pages#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'welcome#index'
+
   #root 'pages#index'
 
   # Example of regular route:
