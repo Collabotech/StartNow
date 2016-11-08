@@ -22,5 +22,4 @@ class SessionsController < ApplicationController
       flash[:success] = "Good bye"
       redirect_to root_path
   end
-
 end

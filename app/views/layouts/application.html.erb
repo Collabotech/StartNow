@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>STARTNOWWWW</title>
 
+
+  <!---
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+-->
 </head>
+
 <body>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
 
     <div class="container">
-      <div class="navbar-header">
-          <%= link_to 'Rails Simple Auth', '#', class: '
-            navbar-brand' %>
-      </div>
+    
       <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
               <li><%= link_to 'Home' %></li>
@@ -25,11 +28,9 @@
   </nav>
 
   <div class="container">
-      <% flash.each do |type, message| %>
-          <div class="alert alert-<%= type %>"><%= message %></div>
-  <% end %>
+    <%= yield %>
+  </div>
 
-  <%= yield %>
 </body>
 
 </html>
