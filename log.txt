@@ -1,0 +1,101 @@
+2016-11-10T23:27:31.367615+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+2016-11-10T23:27:46.715665+00:00 heroku[router]: at=info method=GET path="/login" host=arcane-shelf-86139.herokuapp.com request_id=202b95d3-80c1-46af-84aa-ffc5e7df86d3 fwd="207.23.189.44" dyno=web.1 connect=0ms service=43ms status=200 bytes=2744
+2016-11-10T23:27:46.680876+00:00 app[web.1]: Started GET "/login" for 207.23.189.44 at 2016-11-10 23:27:46 +0000
+2016-11-10T23:27:46.689989+00:00 app[web.1]: Processing by SessionsController#new as HTML
+2016-11-10T23:27:46.691945+00:00 app[web.1]:   Rendered sessions/new.html.erb within layouts/application (0.8ms)
+2016-11-10T23:27:46.693809+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+2016-11-10T23:27:50.333125+00:00 heroku[router]: at=info method=POST path="/login" host=arcane-shelf-86139.herokuapp.com request_id=4173de47-940c-4aa2-b8f8-058f90b68dc3 fwd="207.23.189.44" dyno=web.1 connect=0ms service=34ms status=500 bytes=1669
+2016-11-10T23:27:50.307288+00:00 app[web.1]: Started POST "/login" for 207.23.189.44 at 2016-11-10 23:27:50 +0000
+2016-11-10T23:27:50.311168+00:00 app[web.1]: Processing by SessionsController#create as HTML
+2016-11-10T23:27:50.311212+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"+tY+6Ghw818MYCW+kjlSCAd5CUyn1Wgxjeaw3z+r2r9TPnx8SkKQD5FNTKmMygHd1cv/WOiinPO+k8feJUZVIg==", "email"=>"asdfs", "password"=>"[FILTERED]", "commit"=>"Log in"}
+2016-11-10T23:27:50.319846+00:00 app[web.1]: 
+2016-11-10T23:27:50.318422+00:00 app[web.1]: Completed 500 Internal Server Error in 7ms (ActiveRecord: 6.2ms)
+2016-11-10T23:27:50.319849+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-11-10T23:27:50.319848+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-11-10T23:27:50.319850+00:00 app[web.1]:                                           ^
+2016-11-10T23:27:50.319851+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-11-10T23:27:50.319851+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-11-10T23:27:50.319853+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-11-10T23:27:50.319853+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-11-10T23:27:50.319852+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-11-10T23:27:50.319854+00:00 app[web.1]:                ORDER BY a.attnum
+2016-11-10T23:27:50.319855+00:00 app[web.1]: ):
+2016-11-10T23:27:50.319854+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-11-10T23:27:50.319856+00:00 app[web.1]:   app/controllers/sessions_controller.rb:6:in `create'
+2016-11-10T23:27:50.319856+00:00 app[web.1]: 
+2016-11-10T23:27:50.319857+00:00 app[web.1]: 
+2016-11-10T23:28:23.934592+00:00 app[web.1]: Started GET "/sessions/new" for 207.23.189.44 at 2016-11-10 23:28:23 +0000
+2016-11-10T23:28:24.003055+00:00 app[web.1]: Processing by SessionsController#new as HTML
+2016-11-10T23:28:24.034337+00:00 app[web.1]:   Rendered sessions/new.html.erb within layouts/application (3.4ms)
+2016-11-10T23:28:24.039466+00:00 app[web.1]: Completed 200 OK in 36ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+2016-11-10T23:28:24.042047+00:00 heroku[router]: at=info method=GET path="/sessions/new" host=arcane-shelf-86139.herokuapp.com request_id=e4dd07f7-071e-4d61-84e0-1137e49313aa fwd="207.23.189.44" dyno=web.1 connect=1ms service=116ms status=200 bytes=2744
+2016-11-10T23:28:28.047243+00:00 heroku[router]: at=info method=GET path="/" host=arcane-shelf-86139.herokuapp.com request_id=f2cd9441-8489-4551-b84f-a99bd0da15b6 fwd="207.23.189.44" dyno=web.1 connect=0ms service=30ms status=200 bytes=1997
+2016-11-10T23:28:28.019615+00:00 app[web.1]: Started GET "/" for 207.23.189.44 at 2016-11-10 23:28:28 +0000
+2016-11-10T23:28:28.031009+00:00 app[web.1]: Processing by PagesController#index as HTML
+2016-11-10T23:28:28.039657+00:00 app[web.1]:   Rendered pages/index.html.erb within layouts/application (0.4ms)
+2016-11-10T23:28:28.041382+00:00 app[web.1]: Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+2016-11-10T23:45:51.188155+00:00 heroku[router]: at=info method=GET path="/login" host=arcane-shelf-86139.herokuapp.com request_id=020975bc-08ff-4ad6-befe-d93db544fad2 fwd="207.23.189.44" dyno=web.1 connect=1ms service=8ms status=200 bytes=2744
+2016-11-10T23:45:51.182026+00:00 app[web.1]: Started GET "/login" for 207.23.189.44 at 2016-11-10 23:45:51 +0000
+2016-11-10T23:45:51.184188+00:00 app[web.1]: Processing by SessionsController#new as HTML
+2016-11-10T23:45:51.187138+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+2016-11-10T23:45:51.185793+00:00 app[web.1]:   Rendered sessions/new.html.erb within layouts/application (0.6ms)
+2016-11-10T23:45:54.300182+00:00 heroku[router]: at=info method=POST path="/login" host=arcane-shelf-86139.herokuapp.com request_id=5a550819-33c1-4277-90ab-937e073fa7a8 fwd="207.23.189.44" dyno=web.1 connect=1ms service=8ms status=500 bytes=1669
+2016-11-10T23:45:54.294573+00:00 app[web.1]: Started POST "/login" for 207.23.189.44 at 2016-11-10 23:45:54 +0000
+2016-11-10T23:45:54.296926+00:00 app[web.1]: Processing by SessionsController#create as HTML
+2016-11-10T23:45:54.296982+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hyAztP1WugdjKole6ebwQvg/U3x8x4++dxYv3spjMVH9MJa8cc5uIChwzJlVMgU2VILWb6E6vzKqS++YcQDWA==", "email"=>"sdf", "password"=>"[FILTERED]", "commit"=>"Log in"}
+2016-11-10T23:45:54.299143+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms (ActiveRecord: 1.1ms)
+2016-11-10T23:45:54.300105+00:00 app[web.1]: 
+2016-11-10T23:45:54.300107+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-11-10T23:45:54.300108+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-11-10T23:45:54.300109+00:00 app[web.1]:                                           ^
+2016-11-10T23:45:54.300109+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-11-10T23:45:54.300110+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-11-10T23:45:54.300111+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-11-10T23:45:54.300112+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-11-10T23:45:54.300112+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-11-10T23:45:54.300113+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-11-10T23:45:54.300113+00:00 app[web.1]:                ORDER BY a.attnum
+2016-11-10T23:45:54.300114+00:00 app[web.1]: ):
+2016-11-10T23:45:54.300115+00:00 app[web.1]:   app/controllers/sessions_controller.rb:6:in `create'
+2016-11-10T23:45:54.300115+00:00 app[web.1]: 
+2016-11-10T23:45:54.300116+00:00 app[web.1]: 
+2016-11-10T23:46:01.658678+00:00 heroku[router]: at=info method=POST path="/login" host=arcane-shelf-86139.herokuapp.com request_id=5d5c8bf4-2355-41bc-b9a1-da73fd3fbd8d fwd="207.23.189.44" dyno=web.1 connect=1ms service=26ms status=500 bytes=1669
+2016-11-10T23:46:01.642583+00:00 app[web.1]: Started POST "/login" for 207.23.189.44 at 2016-11-10 23:46:01 +0000
+2016-11-10T23:46:01.646091+00:00 app[web.1]: Processing by SessionsController#create as HTML
+2016-11-10T23:46:01.646169+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hyAztP1WugdjKole6ebwQvg/U3x8x4++dxYv3spjMVH9MJa8cc5uIChwzJlVMgU2VILWb6E6vzKqS++YcQDWA==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+2016-11-10T23:46:01.652176+00:00 app[web.1]: Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.6ms)
+2016-11-10T23:46:01.657093+00:00 app[web.1]: 
+2016-11-10T23:46:01.657095+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-11-10T23:46:01.657096+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-11-10T23:46:01.657097+00:00 app[web.1]:                                           ^
+2016-11-10T23:46:01.657098+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-11-10T23:46:01.657099+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-11-10T23:46:01.657100+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-11-10T23:46:01.657100+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-11-10T23:46:01.657101+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-11-10T23:46:01.657102+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-11-10T23:46:01.657103+00:00 app[web.1]:                ORDER BY a.attnum
+2016-11-10T23:46:01.657103+00:00 app[web.1]: ):
+2016-11-10T23:46:01.657104+00:00 app[web.1]:   app/controllers/sessions_controller.rb:6:in `create'
+2016-11-10T23:46:01.657104+00:00 app[web.1]: 
+2016-11-10T23:46:01.657105+00:00 app[web.1]: 
+2016-11-11T00:11:56.391440+00:00 heroku[router]: at=info method=POST path="/login" host=arcane-shelf-86139.herokuapp.com request_id=da0b6099-c1cf-461d-81f7-25e84574a10f fwd="207.23.189.44" dyno=web.1 connect=0ms service=11ms status=500 bytes=1669
+2016-11-11T00:11:56.367215+00:00 app[web.1]: Started POST "/login" for 207.23.189.44 at 2016-11-11 00:11:56 +0000
+2016-11-11T00:11:56.369537+00:00 app[web.1]: Processing by SessionsController#create as HTML
+2016-11-11T00:11:56.369596+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hyAztP1WugdjKole6ebwQvg/U3x8x4++dxYv3spjMVH9MJa8cc5uIChwzJlVMgU2VILWb6E6vzKqS++YcQDWA==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+2016-11-11T00:11:56.373309+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms (ActiveRecord: 2.0ms)
+2016-11-11T00:11:56.374940+00:00 app[web.1]: 
+2016-11-11T00:11:56.374943+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2016-11-11T00:11:56.374944+00:00 app[web.1]: LINE 5:                WHERE a.attrelid = '"users"'::regclass
+2016-11-11T00:11:56.374945+00:00 app[web.1]:                                           ^
+2016-11-11T00:11:56.374945+00:00 app[web.1]: :               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2016-11-11T00:11:56.374946+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2016-11-11T00:11:56.374947+00:00 app[web.1]:                 FROM pg_attribute a LEFT JOIN pg_attrdef d
+2016-11-11T00:11:56.374948+00:00 app[web.1]:                   ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2016-11-11T00:11:56.374949+00:00 app[web.1]:                WHERE a.attrelid = '"users"'::regclass
+2016-11-11T00:11:56.374949+00:00 app[web.1]:                  AND a.attnum > 0 AND NOT a.attisdropped
+2016-11-11T00:11:56.374950+00:00 app[web.1]:                ORDER BY a.attnum
+2016-11-11T00:11:56.374951+00:00 app[web.1]: ):
+2016-11-11T00:11:56.374951+00:00 app[web.1]:   app/controllers/sessions_controller.rb:6:in `create'
+2016-11-11T00:11:56.374952+00:00 app[web.1]: 
+2016-11-11T00:11:56.374953+00:00 app[web.1]: 
