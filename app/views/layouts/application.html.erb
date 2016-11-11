@@ -2,6 +2,10 @@
 <html>
 <head>
 
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+
 
   <!---
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -16,15 +20,21 @@
     <div class="container">
 
       <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
+
+
+          <% if current_user %>
+            <ul>
+              <li><%= current_user.email %></li>
               <li><%= link_to 'Home' %></li>
-              <!--% if !logged_in? %>-->
-                  <li><%= link_to 'Log in', login_path %></li>
-              <!--% else %-->
-                  <li><%= link_to 'Profile', profile_path %></li>
-                  <li><%= link_to 'Log out', logout_path, method: :delete  %></li>
-              <!--% end %-->
-          </ul>
+              <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+            </ul>
+          <% else %>
+            <ul>
+              <li><%= link_to "Login", 'login' %></a></li>
+              <li><%= link_to "Signup", 'signup' %></a></li>
+            </ul>
+          <% end %>
+
       </div>
     </div>
   </nav>
