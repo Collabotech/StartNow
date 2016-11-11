@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
 
 #current_user determines whether a user is logged in or logged out by checking
 #whether there's a user in the database with a given session id
