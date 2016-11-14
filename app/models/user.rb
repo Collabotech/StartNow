@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-
-    has_secure_password
     
+    
+    has_secure_password 
+    validates :password, :length => {:minimum => 6 }
+    validates :password_confirmation, :presence => true, :if => '!password.nil?'
+
 end
