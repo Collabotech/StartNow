@@ -5,12 +5,18 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+   
+   # @posts = Post.all
+     @posts = current_user.posts
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    #so that a user can see their own posts and not everyones!
+ # @user = User.find(params[:user_id])
+  #@posts = @user.posts
+    
   end
 
   # GET /posts/new
