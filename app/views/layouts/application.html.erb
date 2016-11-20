@@ -25,6 +25,7 @@
 
           <% if current_user %>
             <ul>
+              <form><input type="text" name="search" placeholder="Search.."></form>
               <li><%= current_user.email %></li>
               <li><%= link_to 'Home' %></li>
               <li><%= link_to "Profile", profile_path %></li>
