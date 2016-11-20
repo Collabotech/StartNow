@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
     has_secure_password 
     validates :password, :length => {:minimum => 6 }
     validates :password_confirmation, :presence => true, :if => '!password.nil?'
+    
+    #check if a user with the same email exists
+    validates :email, :presence => true, :uniqueness => true
 
 end
