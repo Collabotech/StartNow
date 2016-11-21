@@ -1,2 +1,65 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+</div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>STARTNOW</h1>
+        <p>Where Collaboration Begins</p>
+      </div>
+    </div>
+    <div class="posters">
+        <div class="container">
+            <h2>Successful Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/14955953_10202455122895857_4720710582512918774_n.jpg?oh=d4b8294e5336d8b3b4780a23de7b2753&oe=588DBB9B">
+                        <p><a href="#">See the team. Giovanni, David, Joanna, Manpreet (left to right)</a></p>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                    <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/1044928_10201588717556265_7013929658822700952_n.jpg?oh=02a78e3e388d2fc897eb2db72f3bc859&oe=5894D999">
+                    <p> <a href = "" >The Team deployed there app using Heroku, see here</a> </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                    <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/1044928_10201588717556265_7013929658822700952_n.jpg?oh=02a78e3e388d2fc897eb2db72f3bc859&oe=5894D999">
+                    <p> <a href = "https://github.com/Collabotech/StartNow" >The team copped first place for most Innovative Idea at Collabohacks, See Github for StartNow </a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="lm">
+	  <div class="container">
+		<div class="row">
+	      <div class="col-md-4">
+			<h3>Search</h3>
+			<p>Join hundreds of other postings</p>
+			  <p> <%= link_to 'See how others have done it', posts_path %></p>
+	      </div>
+
+		  <div class="col-md-4">
+			<h3>Post</h3>
+			<p> Get partners to being on your mission whether it be startup, a project or even an idea</p>
+      <p> <%= link_to 'Post a new project', new_post_path %></p>
+		  </div>
+
+		  <div class="col-md-4">
+			<h3>Collaborate</h3>
+			<p>Where Collaboration Begins. Why Start later when you can StartNow?</p>
+			<p> <%= link_to 'See Many Postings', posts_path %></p>
+      <br>
+
+
+		  </div>
+	    </div>
+	  </div>
+	</div><br>
+     <div class="footer"> <h5 style="text-align:center;">Collabotech 2018 Inc. (c)</h5></div>
+
+  </body>
+</html>
