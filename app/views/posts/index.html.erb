@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<h1>Posted Posts</h1>
 
 <table>
   <thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= post.post_title %></td>
         <td><%= post.post_content %></td>
-        <td><%= post.user %></td>
+        <td><%= post.user_id %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_user_post_path([:user_id]) %>

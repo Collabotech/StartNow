@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
+  <% javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -26,9 +27,8 @@
                 <% if user_signed_in? %>
                     <li class="active"> <%= link_to 'Home', posts_path %></li>
                     <li> <%= link_to 'Profile', edit_user_registration_path%></li>
-                    <li> <%= link_to 'My Projects', user_posts_path(@post_params) %></li>
-                    <li> <%= link_to 'Connections', users_path %></li>
-                    <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+                    <li> <%= link_to 'My Projects', user_posts_path(current_user) %></li>
+                    <li><%= link_to 'Sign out', destroy_user_session_path, :method=> :delete %></li>
 
                 <% else %>
                     <li><%= link_to 'About', pages_about_path %></li>

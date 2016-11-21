@@ -2,9 +2,18 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
-  resources :posts , only: [:index] 
+  resources :posts , only: [:index]
 
-  devise_for :users, :path => 'accounts'
+  devise_for :users, :path => 'accounts' do
+    get '/sign_out' => 'devise/sessions#destroy'
+    get '/log_in' => 'devise/sessions#new'
+    get '/log_out' => 'devise/sessions#destroy'
+    get '/sign_up' => 'devise/registrations#new'
+    get '/edit_profile' => 'devise/registrations#edit'
+  end
+
+
+
   resources :users do
     resources :posts
   end
