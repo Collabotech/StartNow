@@ -20,7 +20,7 @@
                 <div class="col-md-4">
                     <div class="thumbnail">
                     <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/1044928_10201588717556265_7013929658822700952_n.jpg?oh=02a78e3e388d2fc897eb2db72f3bc859&oe=5894D999">
-                    <p> <a href = "" >The Team deployed there app using Heroku, see here</a> </p>
+                    <p> <a href = "https://arcane-shelf-86139.herokuapp.com" >The Team deployed their app using Heroku, see here</a> </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -45,7 +45,7 @@
 		  <div class="col-md-4">
 			<h3>Post</h3>
 			<p> Get partners to being on your mission whether it be startup, a project or even an idea</p>
-      <p> <%= link_to 'Post a new project', new_post_path %></p>
+      <p> <%= link_to 'Post a new project', new_user_post_path(:user_id) %></p>
 		  </div>
 
 		  <div class="col-md-4">
@@ -53,8 +53,6 @@
 			<p>Where Collaboration Begins. Why Start later when you can StartNow?</p>
 			<p> <%= link_to 'See Many Postings', posts_path %></p>
       <br>
-
-
 		  </div>
 	    </div>
 	  </div>
