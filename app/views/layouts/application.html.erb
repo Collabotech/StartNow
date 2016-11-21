@@ -26,7 +26,7 @@
               <div class="nav navbar-nav navbar-right">
                 <% if user_signed_in? %>
                     <li class="active"> <%= link_to 'Home', posts_path %></li>
-                    <li> <%= link_to 'Profile', edit_user_registration_path%></li>
+                    <li> <%= link_to 'Profile', pages_profile_path %></li>
                     <li> <%= link_to 'My Projects', user_posts_path(current_user) %></li>
                     <li><%= link_to 'Sign out', destroy_user_session_path, :method=> :delete %></li>
 

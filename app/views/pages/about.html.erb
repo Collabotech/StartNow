@@ -39,19 +39,34 @@
 	      <div class="col-md-4">
 			<h3>Search</h3>
 			<p>Join hundreds of other postings</p>
-			  <p> <%= link_to 'See how others have done it', posts_path %></p>
+			  <p>
+          <% if user_signed_in? %>
+          <%= link_to 'See how others have done it', posts_path %></p>
+            <% else %>
+              <%= link_to 'Post a new project', new_user_session_path %>
+              ink_to 'Post a new project', new_user_session_path %>
+  		
 	      </div>
 
 		  <div class="col-md-4">
 			<h3>Post</h3>
 			<p> Get partners to being on your mission whether it be startup, a project or even an idea</p>
-      <p> <%= link_to 'Post a new project', new_user_post_path(:user_id) %></p>
-		  </div>
+      <p>   <% if user_signed_in? %>
+            <%= link_to 'Post a new project', new_user_post_path(:user_id) %></p>
+        <% else %>
+            <%= link_to 'Post a new project', new_user_session_path %>
+		  <% end %>
+    </p>
 
 		  <div class="col-md-4">
 			<h3>Collaborate</h3>
 			<p>Where Collaboration Begins. Why Start later when you can StartNow?</p>
-			<p> <%= link_to 'See Many Postings', posts_path %></p>
+			<p>
+         <% if user_signed_in? %>
+        <%= link_to 'See Many Postings', posts_path %></p>
+        <% else %>
+          <%= link_to 'See Many Postings', new_user_session_path %>
+		  <% end %>
       <br>
 		  </div>
 	    </div>
