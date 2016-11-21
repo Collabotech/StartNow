@@ -26,7 +26,7 @@
           <% if current_user %>
             <ul>
               <li><%= current_user.email %></li>
-              <li><%= link_to 'Home' %></li>
+              <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to "Log out", logout_path, method: "delete" %></li>
               <li><%= link_to "New Project", new_post_path, method: "get" %></li>
             </ul>
@@ -36,6 +36,12 @@
               <li><%= link_to "Signup", 'signup' %></a></li>
             </ul>
           <% end %>
+          
+          <!-- Form for searching projects -->
+          <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
       </div>
     </div>

@@ -7,6 +7,13 @@ class PostsController < ApplicationController
   def index
    #so that a user can see their own posts and not everyones!
      @posts = current_user.posts
+     
+  if params[:search]
+    @posts = Post.search(params[:search]).order("created_at DESC")
+  else
+    @posts = Post.all.order("created_at DESC")
+  end
+  
   end
 
   # GET /posts/1
@@ -49,7 +56,7 @@ class PostsController < ApplicationController
   else
     redirect_to root_path, notice: @post.errors.full_messages.first
   end
-end
+  end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
