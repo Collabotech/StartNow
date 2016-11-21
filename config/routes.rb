@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :path => 'accounts'
+  resources :users do
+    resources :posts
+  end
+
   resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
