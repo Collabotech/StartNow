@@ -19,7 +19,7 @@
         <td><%= post.post_content %></td>
         <td><%= post.user_id %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_user_post_path(:user_id,:id) %></td>
+        <td><%= link_to 'Edit', post,  method: :edit %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

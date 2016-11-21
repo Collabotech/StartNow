@@ -14,9 +14,13 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :users do
-    resources :posts
-  end
+  resources :post
+
+  resources :users
+  #
+  # resources :users do
+  #   resources :posts
+  # end
 
   resources :widgets
 
@@ -27,10 +31,10 @@ Rails.application.routes.draw do
 
 
   authenticated :user do
-    root to: 'posts#index', as: 'home'
+    root to: 'posts#index'
   end
   unauthenticated :user do
-    root to: 'welcome#index'
+    root to: 'welcome#index' , as: 'home'
   end
 
   # Example of regular route:
