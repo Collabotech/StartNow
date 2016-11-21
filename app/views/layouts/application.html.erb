@@ -9,18 +9,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top navbar-inverse">
-  <div class="container">
 
-    <ul class="nav navbar-nav navbar-right">
-      <li class="navbar-right"> </li>
-    </ul>
-  </div>
-</nav>
+          <div class= "navbar">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav navbar-left">
+                <li><img src="http://startupsuccess.ca/wp-content/uploads/2014/09/Now-Startup-Logo-Clear-Blue-Smaller1.png" alt="StartNow" style="width:50px;height:50px;"></img></li>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                      </form>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+               </ul>
 
+              <div class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                    <li class="active"> <%= link_to 'Home', posts_path %></li>
+                    <li> <%= link_to 'Profile', edit_user_registration_path%></li>
+                    <li> <%= link_to 'My Projects', user_posts_path(@post_params) %></li>
+                    <li> <%= link_to 'Connections', users_path %></li>
+                    <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+
+                <% else %>
+                    <li><%= link_to 'About', pages_about_path %></li>
+                    <li><%= link_to 'Register', new_user_registration_path %> </li>
+                    <li> <%= link_to 'Sign in', new_user_session_path %> </li>
+                <% end %>
+              </li>
+              </div>
+            </div>
 
 <%= yield %>
 
