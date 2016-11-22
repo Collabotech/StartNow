@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get '/sign_up' => 'devise/registrations#new'
   end
 
+  get 'profile' => 'pages#profile'
+
   resources :posts
   resources :post
 
@@ -22,12 +24,20 @@ Rails.application.routes.draw do
   #   resources :posts
   # end
 
+  get '/myprojects' => 'posts#list'
+
   resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get 'post' => 'post#new'
+  post '/post' => 'post#create'
+
+
+  get 'posts' => 'post#new'
+  post '/posts' => 'post#create'
 
 
   authenticated :user do

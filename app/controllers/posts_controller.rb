@@ -5,7 +5,25 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order("created_at DESC")
+    end
   end
+
+  def list
+    @posts = current_user.posts
+  end
+
+ # def index(set)
+ #     @posts = current_user.posts
+ # end
+
+  # def current_user_index
+  #   @posts = current_user.posts
+  # end
 
   # GET /posts/1
   # GET /posts/1.json
@@ -25,9 +43,10 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params) do |post|
-      post.user = current_user
     end
 
+    @post.user = current_user
+    # @post.user = current_user
     # respond_to do |format|
     #   if @post.save
     #     format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -38,7 +57,7 @@ class PostsController < ApplicationController
     #   end
     # end
     if @post.save
-        redirect_to root_path
+        redirect_to posts_url
     else
         redirect_to root_path, notice: @post.errors.full_messages.first
     end

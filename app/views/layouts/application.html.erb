@@ -10,24 +10,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
           <div class= "navbar">
             <div class="container-fluid">
               <ul class="nav navbar-nav navbar-left">
                 <li><img src="http://startupsuccess.ca/wp-content/uploads/2014/09/Now-Startup-Logo-Clear-Blue-Smaller1.png" alt="StartNow" style="width:50px;height:50px;"></img></li>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                      </form>
+                <li style="margin-left:5px;"><% if user_signed_in? %>
+                    <div class="form-group">
+                      <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+                      <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
+                      <%= submit_tag "Search", :name => nil %>
+                      <% end %>
+                    </div><% else %><% end %>
 
+              </li>
                </ul>
 
               <div class="nav navbar-nav navbar-right">
                 <% if user_signed_in? %>
                     <li class="active"> <%= link_to 'Home', posts_path %></li>
                     <li> <%= link_to 'Profile', pages_profile_path %></li>
-                    <li> <%= link_to 'My Projects', user_posts_path(current_user) %></li>
+                    <li> <%= link_to 'My Projects', myprojects_path %></li>
                     <li><%= link_to 'Sign out', destroy_user_session_path, :method=> :delete %></li>
 
                 <% else %>
@@ -39,6 +41,11 @@
               </li>
               </div>
             </div>
+          </div>
+          <div>
+            <p class ="notice"><% notice %> </p>
+            <p class ="alert"><% alert %> </p>
+          </div>
 
 <%= yield %>
 
