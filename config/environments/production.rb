@@ -117,6 +117,5 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: ENV["SENDMAIL_USERNAME'"],
     password: ENV["SENDMAIL_PASSWORD"]
-
   }
 end
