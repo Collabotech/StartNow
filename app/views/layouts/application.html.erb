@@ -25,7 +25,8 @@
               </li>
                </ul>
 
-              <div class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
+
                 <% if user_signed_in? %>
                     <li class="active"> <%= link_to 'Home', posts_path %></li>
                     <li> <%= link_to 'Profile', profile_path %></li>
@@ -39,12 +40,10 @@
                     <li><%= link_to 'Register', new_user_registration_path %> </li>
                     <li> <%= link_to 'Sign in', new_user_session_path %> </li>
                 <% end %>
-              </li>
               </div>
             </div>
-          </div>
 
-           <p class ="notice"><% notice %> </p>
+            <p class ="notice"><% notice %> </p>
             <p class ="alert"><% alert %> </p>
 
 

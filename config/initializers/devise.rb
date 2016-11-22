@@ -209,6 +209,8 @@ Devise.setup do |config|
   #Allow unconfirmed access for 365 days
   config.allow_unconfirmed_access_for = 365.days
 
+  config.secret_key = '6cc0a62819140091c87ae7cbb26ceb0cbfbf7d580d6fb8c2503c33b3da73483c0e07804e159c3b4fb827a52d8344c879160038c2e8d09ba33381c83605e19b2b'
+
   # ==> Configuration for :encryptable
   # Allow you to use another hashing or encryption algorithm besides bcrypt (default).
   # You can use :sha1, :sha512 or algorithms from others authentication tools as
