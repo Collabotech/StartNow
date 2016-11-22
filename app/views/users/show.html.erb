@@ -1,0 +1,10 @@
+
+
+<h2> Hey <%= current_user.name%></h2>
+
+<div>
+  <p> Summary: </p>
+  <p><%= current_user.about %></p>
+</div>
+<br>
+<%= image_tag current_user.image.url(:medium) %>
