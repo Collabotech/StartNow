@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/show'
+
   get 'widgets/help'
 
   get 'widgets/help'
