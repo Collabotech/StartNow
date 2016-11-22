@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :path => 'accounts'
 
   get 'users/edit'
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
-  devise_for :users, :path => 'accounts'
+
 
   # devise_for :users, :path => 'accounts' do
   #   get '/sign_out' => 'devise/sessions#destroy'
