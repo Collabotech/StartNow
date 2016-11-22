@@ -119,7 +119,6 @@ Devise.setup do |config|
   # able to access the website for two days without confirming their account,
   # access will be blocked just in the third day. Default is 0.days, meaning
   # the user cannot access the website without confirming their account.
-  config.allow_unconfirmed_access_for = 365.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
@@ -207,7 +206,7 @@ Devise.setup do |config|
   # config.sign_in_after_reset_password = true
 
   #Allow unconfirmed access for 365 days
-  config.allow_unconfirmed_access_for = 365.days
+  config.allow_unconfirmed_access_for = 0.days
 
   config.secret_key = '6cc0a62819140091c87ae7cbb26ceb0cbfbf7d580d6fb8c2503c33b3da73483c0e07804e159c3b4fb827a52d8344c879160038c2e8d09ba33381c83605e19b2b'
 
@@ -247,7 +246,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :delete
+  config.sign_out_via = :get
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
