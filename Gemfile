@@ -4,7 +4,7 @@ ruby '2.3.1'
 
 #gem for google sign in
 gem "omniauth-google-oauth2", "~> 0.2.1"
-
+gem 'letter_opener'
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'omniauth'

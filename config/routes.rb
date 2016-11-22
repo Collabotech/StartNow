@@ -23,14 +23,14 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
-
-
   # devise_for :users, :path => 'accounts' do
   #   get '/sign_out' => 'devise/sessions#destroy'
   #   get '/log_in' => 'devise/sessions#new'
   #   get '/log_out' => 'devise/sessions#destroy'
   #   get '/sign_up' => 'devise/registrations#new'
   # end
+
+
 
   resources :posts
   resources :post

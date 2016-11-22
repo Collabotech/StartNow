@@ -10,44 +10,52 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-          <div class= "navbar">
+          <!-- <div class= "navbar"> -->
             <div class="container-fluid">
-              <ul class="nav navbar-nav navbar-left">
-                <li><img src="http://startupsuccess.ca/wp-content/uploads/2014/09/Now-Startup-Logo-Clear-Blue-Smaller1.png" alt="StartNow" style="width:50px;height:50px;"></img></li>
-                <li style="margin-left:5px;"><% if user_signed_in? %>
-                    <div class="form-group">
-                      <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-                      <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
-                      <%= submit_tag "Search", :name => nil %>
-                      <% end %>
-                    </div><% else %><% end %>
+                <ul class="nav navbar-nav navbar-left">
+                  <li><img src="http://startupsuccess.ca/wp-content/uploads/2014/09/Now-Startup-Logo-Clear-Blue-Smaller1.png" alt="StartNow" style="width:50px;height:50px;"></img></li>
+                    <li style="margin-left:5px;"><% if user_signed_in? %>
+                      <div class="form-group">
+                        <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+                        <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
+                        <%= submit_tag "Search", :name => nil %>
+                        <% end %>
+                      </div><% else %><% end %>
 
-              </li>
-               </ul>
+                    </li>
+                 </ul>
 
-              <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
 
-                <% if user_signed_in? %>
-                    <li class="active"> <%= link_to 'Home', posts_path %></li>
-                    <li> <%= link_to 'Profile', profile_path %></li>
-                    <li> <%= link_to 'My Projects', myprojects_path %></li>
-                    <li> <%= link_to 'Settings', settings_path %></li>
-                    <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+                  <% if user_signed_in? %>
+                      <li class="active"> <%= link_to 'Home', posts_path %></li>
+                      <li> <%= link_to 'Profile', profile_path %></li>
+                      <li> <%= link_to 'My Projects', myprojects_path %></li>
+                      <li> <%= link_to 'Settings', settings_path %></li>
+                      <li><%= link_to 'Sign out', destroy_user_session_path, method: :get %></li>
 
-                <% else %>
-                    <li class="active"> <%= link_to 'Home', root_path %></li>
-                    <li><%= link_to 'About', pages_about_path %></li>
-                    <li><%= link_to 'Register', new_user_registration_path %> </li>
-                    <li> <%= link_to 'Sign in', new_user_session_path %> </li>
-                <% end %>
+                  <% else %>
+                      <li class="active"> <%= link_to 'Home', root_path %></li>
+                      <li><%= link_to 'About', pages_about_path %></li>
+                      <li><%= link_to 'Register', new_user_registration_path %> </li>
+                      <li> <%= link_to 'Sign in', new_user_session_path %> </li>
+                  <% end %>
+                </ul>
               </div>
-            </div>
 
-            <p class ="notice"><% notice %> </p>
-            <p class ="alert"><% alert %> </p>
+            <!-- </div> -->
+
+            <% if notice %>
+             <p class="notice"><%= notice %></p>
+           <% end %>
+
+           <% if alert %>
+             <p class="alert"><%= alert %></p>
+           <% end %>
+
+            <%= yield %>
 
 
-<%= yield %>
 
 </body>
 </html>
