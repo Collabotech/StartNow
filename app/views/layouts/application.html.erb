@@ -32,7 +32,7 @@
                     <li> <%= link_to 'Profile', profile_path %></li>
                     <li> <%= link_to 'My Projects', myprojects_path %></li>
                     <li> <%= link_to 'Settings', settings_path %></li>
-                    <li><%= link_to 'Sign out', destroy_user_session_path, :method=> :delete %></li>
+                    <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
 
                 <% else %>
                     <li class="active"> <%= link_to 'Home', root_path %></li>
