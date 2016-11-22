@@ -86,18 +86,37 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Mailer
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
 
-  ActionMailer::Base.smtp_settings = {
-    :address              => 'smtp.gmail.net',
-    :port                 => '587',
-    :domain               => 'heroku.com',
-    :enable_starttls_auto => true,  # Also tried tls => true
-    :user_name            => ENV['USERNAME'],
-    :password             => ENV['PASSWORD'],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+  # ActionMailer::Base.smtp_settings = {
+  #   :address              => 'smtp.sendgrid.net',
+  #   :port                 => '587',
+  #   :domain               => 'heroku.com',
+  #   :enable_starttls_auto => true,  # Also tried tls => true
+  #   :user_name            => ENV['USERNAME'],
+  #   :password             => ENV['PASSWORD'],
+  #   :authentication       => "plain",
+  #   :enable_starttls_auto => true
+  # }
+
+
+  #put the following to bash
+  # export SENDMAIL_PASSWORD="mypassword"
+  # export SENDMAIL_USERNAME=giovanni.hosang@gmail.com
+  # export MAIL_HOST=localhost:3000
+  config.action_mailer.default_url_options = { host: 'MAIL_HOST' }
+
+  ActionMailer::Base.config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",####important
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["SENDMAIL_USERNAME'"],
+    password: ENV["SENDMAIL_PASSWORD"]
+
   }
 end
