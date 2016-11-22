@@ -4,15 +4,13 @@ ruby '2.3.1'
 
 #gem for google sign in
 gem "omniauth-google-oauth2", "~> 0.2.1"
-
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
-
-gem 'font-awesome-sass', '~> 4.7.0'
+gem 'jquery'
 
 
 
