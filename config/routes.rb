@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'widgets/help'
+
+  get 'widgets/help'
+
   get 'pages/about'
 
   get 'pages/profile'
