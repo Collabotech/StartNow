@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-   Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb )
+
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -22,7 +22,6 @@ Rails.application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.serve_static_files = true
   #config.serve_static_assets = true
 
 
@@ -32,7 +31,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -47,7 +46,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -72,14 +71,11 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'arcane-shelf-86139.heroku.com' }
-  # Disable automatic flushing of the log to improve performance.config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => "127.0.0.1",
-    :port    => 25,
-    :domain  => 'herokuapp.com'
-  }
+  config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { :host => 'http://arcane-shelf-86139.heroku.com' }
+
+    # Disable automatic flushing of the log to improve performance.config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
     # config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
@@ -89,27 +85,18 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Mailer
-
-
   ActionMailer::Base.delivery_method = :smtp
- ActionMailer::Base.smtp_settings = {
-    :tls => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => "gmail.com",
-    :authentication => :login,
-    :user_name => "[username]",
-    :password => "[password]"
-  }
+  ActionMailer::Base.perform_deliveries = true
 
-  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :tls => true,
-    :address => "smtp.hotmail.com",
-    :port => 587,
-    :domain => "hotmail.com",
-    :authentication => :login,
-    :user_name => "[username]",
-    :password => "[password]"
+    :address              => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :domain               => 'heroku.com',
+    :user_name            => ENV['USERNAME'],
+    :password             => ENV['PASSWORD'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
   }
+  }
+
 end
