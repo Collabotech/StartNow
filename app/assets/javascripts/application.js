@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-// @import "bourbon";
+@import "bourbon";

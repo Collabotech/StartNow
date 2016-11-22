@@ -11,7 +11,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'jquery'
-
+gem 'rails_12factor', group: :production #need this for rails 4 assets on heroku
 
 
 gem 'therubyracer'
