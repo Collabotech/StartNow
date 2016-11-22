@@ -11,8 +11,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    if @user.update(user_params)
-
+    if @user.update_attributes(user_params)
       bypass_sign_in(@user)
       redirect_to '/'
     else
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, id)
+    params.require(:user).permit(:password, :password_confirmation, :image, :name, :about)
   end
 
 end

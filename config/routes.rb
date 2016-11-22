@@ -40,6 +40,8 @@ Rails.application.routes.draw do
 
   get '/myprojects' => 'posts#list'
 
+  get '/settings' => 'users#edit'
+
   get 'profile' => 'users#show'
   resources :widgets
 
@@ -50,7 +52,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   get 'post' => 'post#new'
   post '/post' => 'post#create'
-
+  patch 'update' => 'users#up'
 
   get 'posts' => 'post#new'
   post '/posts' => 'post#create'
