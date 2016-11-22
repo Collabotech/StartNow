@@ -16,5 +16,7 @@
 //= require_tree .
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "font-awesome";
+@import "jquery.datetimepicker";
+@import "*";
 @import "bourbon";

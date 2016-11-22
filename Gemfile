@@ -4,17 +4,18 @@ ruby '2.3.1'
 
 #gem for google sign in
 gem "omniauth-google-oauth2", "~> 0.2.1"
+
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
-gem 'jquery'
-gem 'rails_12factor', group: :production #need this for rails 4 assets on heroku
+
+gem 'font-awesome-sass', '~> 4.7.0'
 
 
-gem 'therubyracer'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
