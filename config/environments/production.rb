@@ -69,11 +69,12 @@ Rails.application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
+  config.action_mailer.perform_deliveries = true
   config.active_support.deprecation = :notify
 
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'http://arcane-shelf-86139.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'http://arcane-shelf-86139.herokuapp.com', :protocol => 'http' }
 
     # Disable automatic flushing of the log to improve performance.config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
     # config.autoflush_log = false
@@ -87,11 +88,13 @@ Rails.application.configure do
   #Mailer
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 
   ActionMailer::Base.smtp_settings = {
-    :address              => 'smtp.sendgrid.net',
+    :address              => 'smtp.gmail.net',
     :port                 => '587',
     :domain               => 'heroku.com',
+    :enable_starttls_auto => true,  # Also tried tls => true
     :user_name            => ENV['USERNAME'],
     :password             => ENV['PASSWORD'],
     :authentication       => "plain",
