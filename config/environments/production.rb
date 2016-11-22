@@ -110,8 +110,8 @@ Rails.application.configure do
     :domain             => 'gmail.com', #you can also use google.com
     :authentication     => :plain,
     :enable_starttls_auto => true,
-    :user_name          => 'ardennecricket@gmail.com',
-    :password           => 'ardennetrophy'
+    :user_name          => 'startnow.collabotech@gmail.com',
+    :password           => 'whystartlater'
   }
 end  #put the following to bash
   # export SENDMAIL_PASSWORD="mypassword"
