@@ -1,2 +1,39 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
+
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="well">
+      <h3>Edit Profile</h3>
+      <%= form_for User.new do |f| %>
+        <div class="form-group">
+          <%= f.label :cover %>
+          <br>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: 'Full Name', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :about %>
+          <%= f.text_area :about, placeholder: 'About', class: 'form-control' %>
+        </div>
+
+        <div>
+        <!-- <%= f.label :image %>
+        <%= f.file_field :image, class: 'form-control' %> -->
+      </div>
+        <div class="actions">
+          <%= submit_tag 'Update', class: 'btn btn-primary' %>
+        </div
+
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

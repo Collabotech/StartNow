@@ -20,8 +20,6 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
-  get 'pages/profile'
-
   get 'pages/about'
 
   devise_for :users, :path => 'accounts' do
@@ -30,8 +28,6 @@ Rails.application.routes.draw do
     get '/log_out' => 'devise/sessions#destroy'
     get '/sign_up' => 'devise/registrations#new'
   end
-
-  get 'profile' => 'pages#profile'
 
   resources :posts
   resources :post
@@ -44,6 +40,7 @@ Rails.application.routes.draw do
 
   get '/myprojects' => 'posts#list'
 
+  get 'profile' => 'users#show'
   resources :widgets
 
   #additional files were added
