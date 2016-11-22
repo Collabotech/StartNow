@@ -2,12 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif,
-                                  "fontawesome-webfont.ttf",
-                                 "fontawesome-webfont.eot",
-                                 "fontawesome-webfont.svg",
-                                 "fontawesome-webfont.woff")
-
 
 
 config.assets.precompile << Proc.new do |path|
