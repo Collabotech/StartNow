@@ -74,7 +74,7 @@ Rails.application.configure do
 
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'http://arcane-shelf-86139.herokuapp.com', :protocol => 'http' }
+  config.action_mailer.default_url_options = { host: 'http://arcane-shelf-86139.herokuapp.com' }
 
     # Disable automatic flushing of the log to improve performance.config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
     # config.autoflush_log = false
@@ -102,20 +102,29 @@ Rails.application.configure do
   #   :enable_starttls_auto => true
   # }
 
+  ActionMailer::Base.smtp_settings =
+  {
 
-  #put the following to bash
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :domain             => 'gmail.com', #you can also use google.com
+    :authentication     => :plain,
+    :enable_starttls_auto => true,
+    :user_name          => 'ardennecricket@gmail.com',
+    :password           => 'ardennetrophy'
+  }
+end  #put the following to bash
   # export SENDMAIL_PASSWORD="mypassword"
   # export SENDMAIL_USERNAME=giovanni.hosang@gmail.com
   # export MAIL_HOST=localhost:3000
-  config.action_mailer.default_url_options = { host: 'MAIL_HOST' }
-
-  ActionMailer::Base.config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "mail.google.com",####important
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["SENDMAIL_USERNAME'"],
-    password: ENV["SENDMAIL_PASSWORD"]
-  }
-end
+  # config.action_mailer.default_url_options = { host: 'MAIL_HOST' }
+  #
+  # ActionMailer::Base.config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: "mail.google.com",####important
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: ENV["SENDMAIL_USERNAME'"],
+  #   password: ENV["SENDMAIL_PASSWORD"]
+  #
