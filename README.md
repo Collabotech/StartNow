@@ -1,10 +1,31 @@
-# ruby-getting-started
+STARTNOW
+CMPT 276, Project Proposal
+October 21, 2016
 
-A barebones Rails app, which can easily be deployed to Heroku.
 
-This application support the [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby) article - check it out.
+Collaborators: Heidi Tong, Giovanni HoSang, Manpreet Kaur, David Tu, and Joanna Niemczyk
 
-## Running Locally
+GITHUB URL: https://github.com/Collabotech/StartNow.git
+
+
+WHAT’S STARTNOW?
+StartNow is a web-application targeting Simon Fraser University students who want to work on projects outside of the classroom. Users of our application will be able to log in, create profiles, create project profiles, seek other people with the appropriate skillsets, join existing project groups, post on a project discussion board, create meeting locations, and communicate with fellow users using the chat feature to begin their collaborative process. These features will be discussed further in a latter section.
+
+
+
+
+WHY?
+Projects often require a wide variety of skill sets. In fact, most if not all successful projects begin with a collaboration of sorts. The problem we face as university students is the difficulty of meeting people outside of our own faculties. The limited number of electives we take do not give us a chance to explore other fields. Furthermore, our studies require so much time that we often are unable to meet new people to share ideas with.
+
+
+Whether a person has an idea but not the appropriate skills or vice versa, StartNow allows them to find the right people to collaborate with.
+
+
+In addition, our application aims to increase active behaviour from students. We wish to promote out-of-classroom work by making the process as easy as possible.
+
+
+
+_________________________________________________________________________________
 
 Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
@@ -65,4 +86,3 @@ You can also use Docker to release to Heroku:
 For more information about using Ruby on Heroku, see these Dev Center articles:
 
 - [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
-
