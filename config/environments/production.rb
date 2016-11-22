@@ -10,10 +10,10 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  config.serve_static_assets = true
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
@@ -67,12 +67,43 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
-  # Disable automatic flushing of the log to improve performance.
-  # config.autoflush_log = false
+  # Disable automatic flushing of the log to improve performance.config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "127.0.0.1",
+    :port    => 25,
+    :domain  => 'herokuapp.com'
+  }
+    # config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #Mailer
+
+
+  ActionMailer::Base.delivery_method = :smtp
+ ActionMailer::Base.smtp_settings = {
+    :tls => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "gmail.com",
+    :authentication => :login,
+    :user_name => "[username]",
+    :password => "[password]"
+  }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :tls => true,
+    :address => "smtp.hotmail.com",
+    :port => 587,
+    :domain => "hotmail.com",
+    :authentication => :login,
+    :user_name => "[username]",
+    :password => "[password]"
+  }
 end

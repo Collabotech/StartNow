@@ -1,36 +1,68 @@
 Rails.application.routes.draw do
 
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/show'
+
+  get 'widgets/help'
+
+  get 'widgets/help'
+
   get 'pages/about'
 
-  resources :posts , only: [:index]
+  get 'pages/about'
 
   devise_for :users, :path => 'accounts' do
     get '/sign_out' => 'devise/sessions#destroy'
     get '/log_in' => 'devise/sessions#new'
     get '/log_out' => 'devise/sessions#destroy'
     get '/sign_up' => 'devise/registrations#new'
-    get '/edit_profile' => 'devise/registrations#edit'
   end
 
+  resources :posts
+  resources :post
 
+  resources :users
+  #
+  # resources :users do
+  #   resources :posts
+  # end
 
-  resources :users do
-    resources :posts
-  end
+  get '/myprojects' => 'posts#list'
 
+  get '/settings' => 'users#edit'
+
+  get 'profile' => 'users#show'
   resources :widgets
 
+  #additional files were added
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get 'post' => 'post#new'
+  post '/post' => 'post#create'
+  patch 'update' => 'users#up'
+
+  get 'posts' => 'post#new'
+  post '/posts' => 'post#create'
 
 
   authenticated :user do
-    root to: 'posts#index', as: 'home'
+    root to: 'posts#index'
   end
   unauthenticated :user do
-    root to: 'welcome#index'
+    root to: 'welcome#index' , as: 'home'
   end
 
   # Example of regular route:

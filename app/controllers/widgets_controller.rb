@@ -51,6 +51,8 @@ class WidgetsController < ApplicationController
     end
   end
 
+  def help
+  end
   # DELETE /widgets/1
   # DELETE /widgets/1.json
   def destroy
