@@ -73,7 +73,7 @@ Rails.application.configure do
 
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'http://arcane-shelf-86139.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'http://arcane-shelf-86139.herokuapp.com' }
 
     # Disable automatic flushing of the log to improve performance.config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
     # config.autoflush_log = false
