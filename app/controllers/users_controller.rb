@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    if current_user.admin?
+          @posts = User.all
+    end
   end
 
   def update
@@ -21,6 +25,7 @@ class UsersController < ApplicationController
 
   def show
   end
+
 
   def new
     @user = User.new

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :path => 'accounts'
-  
+
   get 'users/edit'
 
   get 'users/update'
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'users/new'
 
   get 'users/edit'
+
+  get 'users/list'
 
   get 'users/update'
 
