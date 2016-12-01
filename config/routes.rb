@@ -34,7 +34,12 @@ Rails.application.routes.draw do
 
 
 
-  resources :posts
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+    end
+  end
+
   resources :post
 
   resources :users
