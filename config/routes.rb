@@ -69,6 +69,13 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root to: 'welcome#index' , as: 'home'
   end
+  
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "posts#downvote"
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

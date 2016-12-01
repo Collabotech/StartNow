@@ -7,7 +7,9 @@
     <tr>
       <th>Post title</th>
       <th>Post content</th>
-      <th>User ID</th>
+      <th>User Name</th>
+      <th>Number of likes</th>
+      <th>Like here</th>
 
       <th colspan="8"></th>
     </tr>
@@ -19,6 +21,11 @@
         <td><%= link_to post.post_title, post_path(post)%></td>
         <td><%= post.post_content %></td>
         <td><%= post.user.name %></td>
+       <td><%= link_to like_post_path(post), method: :put do%> Interested?  <% end %> 
+        
+        </td>
+        <td> <%= post.get_upvotes.size %> 
+        </td>
         
       </tr>
     <% end %>
