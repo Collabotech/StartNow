@@ -6,6 +6,20 @@ class ApplicationController < ActionController::Base
 
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  helper_method :mailbox
+  
+  
+  private
+  
+  def mailbox
+    @mailbox ||= current_user.mailbox
+  end
+  
+  
+  
+  
+
 
   protected
 

@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 
+gem 'mailboxer'
+
+
+
+
+
 #gem for google sign in
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'letter_opener'
