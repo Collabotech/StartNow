@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
-  acts_as_votable
+  
   belongs_to :user
+  acts_as_votable
 
   validates_presence_of :post_content
   validates_presence_of :post_title

@@ -34,13 +34,10 @@ Rails.application.routes.draw do
 
 
 
-  resources :posts do
-    member do
-      put "like", to: "posts#upvote"
-    end
-  end
+  
 
   resources :post
+  resources :posts
 
   resources :users
   #
@@ -76,6 +73,12 @@ Rails.application.routes.draw do
   end
   
   resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "posts#downvote"
+    end
+  end
+  resources :post do
     member do
       put "like", to: "posts#upvote"
       put "dislike", to: "posts#downvote"
