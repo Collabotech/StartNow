@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -18,6 +17,13 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     self.email
   end
+  
+  
+  geocoded_by :city
+  after_validation :geocode
+  
+  
+  
   
   
 end

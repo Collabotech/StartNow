@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.2.3'
 
 
 gem 'mailboxer'
 
+gem 'gmaps4rails'
 
+gem 'jquery-turbolinks'
 
 
 
@@ -48,6 +50,17 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+
+
+gem 'rspec-rails'
+gem 'guard-bundler'
+gem 'guard-rspec'
+gem 'factory_girl_rails'
+gem 'capybara'
+gem 'geocoder'
+
+
+
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development

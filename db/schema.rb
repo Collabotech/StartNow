@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201040949) do
+ActiveRecord::Schema.define(version: 20161202192053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "group_memberships", force: :cascade do |t|
+    t.integer  "member_id",       null: false
+    t.string   "member_type",     null: false
+    t.integer  "group_id"
+    t.string   "group_type"
+    t.string   "group_name"
+    t.string   "membership_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "group_memberships", ["group_name"], name: "index_group_memberships_on_group_name", using: :btree
+  add_index "group_memberships", ["group_type", "group_id"], name: "index_group_memberships_on_group_type_and_group_id", using: :btree
+  add_index "group_memberships", ["member_type", "member_id"], name: "index_group_memberships_on_member_type_and_member_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string "type"
+  end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -83,16 +102,16 @@ ActiveRecord::Schema.define(version: 20161201040949) do
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                   default: "",    null: false
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "name",                              default: "",    null: false
+    t.string   "email",                             default: "",    null: false
+    t.string   "encrypted_password",                default: "",    null: false
     t.string   "about"
     t.string   "avatar"
     t.string   "cover"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                     default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -101,16 +120,19 @@ ActiveRecord::Schema.define(version: 20161201040949) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,     null: false
+    t.integer  "failed_attempts",                   default: 0,     null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "admin",                  default: false
+    t.boolean  "admin",                             default: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city",                   limit: 30
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

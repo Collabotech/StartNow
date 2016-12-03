@@ -2,14 +2,24 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
 
+
+
+
+
   def edit
     @user = current_user
+ 
   end
 
   def index
     @users = User.all
     if current_user.admin?
           @posts = User.all
+    end
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.name
     end
   end
 
@@ -31,8 +41,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+private
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+ 
+    
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :image, :name, :about)
+    params.require(:user).permit(:password, :password_confirmation, :image, :name, :about, :latitude, :longitude, :city)
   end
 
 end

@@ -28,6 +28,11 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: 'off', placeholder: 'password confirmation' %>
       </div>
+      
+      <div class="form-group">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: 'form-control', autofocus: true, placeholder: 'City' %>
+      </div>
       <div class="actions">
         <%= f.submit 'Sign up', class: 'btn btn-success' %>
       </div>
