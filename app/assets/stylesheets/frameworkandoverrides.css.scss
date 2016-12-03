@@ -6,3 +6,10 @@
 #map-container #map-canvas label {
   width: auto; display:inline;
 }
+
+#map img { 
+  max-width: none;
+}
+#map label { 
+  width: auto; display:inline; 
+} 
