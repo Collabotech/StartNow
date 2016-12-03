@@ -51,10 +51,7 @@ gem 'spring',        group: :development
 
 gem 'puma'
 gem 'acts_as_votable', '~> 0.10.0'
-group :production do 
-  gem 'rails_12factor'
-  gem 'pg'
-end
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
