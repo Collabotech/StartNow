@@ -27,22 +27,6 @@ ActiveRecord::Schema.define(version: 20161204134259) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "groups", force: :cascade do |t|
-    t.string   "group_name"
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "groups", ["post_id"], name: "index_groups_on_post_id", using: :btree
-  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
-
-  create_table "memberships", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "post_title"
     t.text     "post_content"
@@ -117,7 +101,5 @@ ActiveRecord::Schema.define(version: 20161204134259) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "groups", "posts"
-  add_foreign_key "groups", "users"
   add_foreign_key "posts", "users"
 end
