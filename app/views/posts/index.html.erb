@@ -21,7 +21,7 @@
         <td><%= link_to post.post_title, post_path(post)%></td>
         <td><%= post.post_content %></td>
         <td><%= post.user.name %></td>
-        <td><%= link_to posts_path, method: :put do%> Interested?<% end %></td>
+        <td><%= like_post_path(post)  method: :put do%> Interested?<% end %></td>
         <!---like_post_path(post) -->
         <td><%= pluralize(post.get_upvotes.size, 'like') %></td>
         </td>
