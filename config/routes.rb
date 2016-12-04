@@ -36,8 +36,8 @@ Rails.application.routes.draw do
 
   
 
-  resources :post
   resources :posts
+  resources :comments
 
   resources :users
   #
@@ -57,12 +57,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get 'post' => 'post#new'
-  post '/post' => 'post#create'
+
   patch 'update' => 'users#up'
 
-  get 'posts' => 'post#new'
-  post '/posts' => 'post#create'
+  get 'posts' => 'posts#new'
+  post '/posts' => 'posts#create'
+
 
 
   authenticated :user do
@@ -78,11 +78,10 @@ Rails.application.routes.draw do
       put "dislike", to: "posts#downvote"
     end
   end
-  resources :post do
-    member do
-      put "like", to: "posts#upvote"
-      put "dislike", to: "posts#downvote"
-    end
+
+  
+  resources :posts do
+    resources :comments
   end
 
   # Example of regular route:

@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
     if params[:search]
       @posts = Post.search(params[:search]).order("created_at DESC")
     else
@@ -17,14 +16,14 @@ class PostsController < ApplicationController
     @posts = current_user.posts
   end
   
- def upvote
+  def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
     redirect_to posts_path
   end
   
   def downvote
-   @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.downvote_by current_user
     redirect_to @posts
   end
@@ -40,6 +39,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = Comment.where(post_id: @post).order("created_at DESC")
   end
 
   # GET /posts/new
@@ -101,12 +101,12 @@ class PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:post_title, :post_content, :user_id)
-    end
+  def post_params
+    params.require(:post).permit(:post_title, :post_content, :user_id)
+  end
 end
