@@ -84,6 +84,7 @@ Rails.application.routes.draw do
   end
 
 
+
 #checking commit
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

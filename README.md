@@ -82,7 +82,7 @@ You can also use Docker to release to Heroku:
     heroku open
 
 ## Documentation
-
+#Giovanni
 For more information about using Ruby on Heroku, see these Dev Center articles:
 
 - [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
