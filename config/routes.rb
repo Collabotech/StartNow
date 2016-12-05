@@ -78,6 +78,7 @@ Rails.application.routes.draw do
       put "dislike", to: "posts#downvote"
       get "like", to: "posts#upvote"
       get "dislike", to: "posts#downvote"
+      #added the gets
     end
     resources :comments
   end
