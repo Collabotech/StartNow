@@ -62,6 +62,8 @@ Make sure the plugin is installed:
 
 Configure Docker and Docker Compose:
 
+
+  #I can push to heroku
     heroku docker:init
 
 And run the app locally:
