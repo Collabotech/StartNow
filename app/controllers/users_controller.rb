@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     if current_user.admin?
           @posts = User.all
     end
+    @map_hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.name
+    end
   end
 
   def update
@@ -32,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :image, :name, :about)
+    params.require(:user).permit(:password, :password_confirmation, :image, :name, :about, :city, :latitude, :longitude)
   end
 
 end

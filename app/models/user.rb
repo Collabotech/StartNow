@@ -22,5 +22,7 @@ class User < ActiveRecord::Base
     self.email
   end
 
+  geocoded_by :city
+  after_validation :geocode
 
 end

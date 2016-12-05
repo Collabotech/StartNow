@@ -4,6 +4,9 @@ ruby '2.3.2'
 
 gem 'mailboxer'
 
+gem 'geocoder'
+gem 'gmaps4rails'
+
 
 #gem for google sign in
 gem "omniauth-google-oauth2", "~> 0.2.1"

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     end
   end
   
+  get '/users/index' => 'users#index'
+  
   
 
   devise_for :users, :path => 'accounts'
