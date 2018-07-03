@@ -1,4 +1,4 @@
-STARTNOW
+# STARTNOW
 CMPT 276, Project Proposal
 October 21, 2016
 
